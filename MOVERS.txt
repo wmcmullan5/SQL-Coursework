@@ -9,7 +9,7 @@ depending on availability. They should receive notice of the date and time of th
 email. They are not required to book the appointment themselves. When a van is due for MOT,
 a full service must be conducted before the test. All vans should have a full-service history. The
 maintenance manager is responsible for organising the scheduling of maintenance. He will
-check the JOBS fi le and the DAILY schedule to help organise the appointments.
+check the JOBS file and the DAILY schedule to help organise the appointments.
 The maintenance manager is also required to manage the stock in the garage. This is
 particularly important as the vehicles are in constant use and the time taken to reorder items
 can impact on schedules. He must check the stock regularly to help him estimate stock
