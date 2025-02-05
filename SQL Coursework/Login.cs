@@ -18,5 +18,16 @@ namespace SQL_Coursework
         {
             InitializeComponent();
         }
+        //switched to highlighted button
+        private void SwitchBtn(object sender, EventArgs e)
+        {
+            registerbtn.Image = Properties.Resources.Heading__1_;
+        }
+        //switches back to regular button
+        private void SwitchBtnBack(object sender, EventArgs e)
+        {
+            registerbtn.Image = Properties.Resources.Heading;
+        }
+
     }
 }
