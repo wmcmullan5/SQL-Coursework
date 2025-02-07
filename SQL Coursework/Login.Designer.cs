@@ -52,6 +52,7 @@
             this.registerbtn.Size = new System.Drawing.Size(93, 45);
             this.registerbtn.TabIndex = 3;
             this.registerbtn.TabStop = false;
+            this.registerbtn.Click += new System.EventHandler(this.registerbtn_Click);
             this.registerbtn.MouseLeave += new System.EventHandler(this.SwitchBtnBack);
             this.registerbtn.MouseHover += new System.EventHandler(this.SwitchBtn);
             // 
@@ -64,6 +65,7 @@
             this.loginbtn.Size = new System.Drawing.Size(78, 43);
             this.loginbtn.TabIndex = 4;
             this.loginbtn.TabStop = false;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
             this.loginbtn.MouseLeave += new System.EventHandler(this.SwitchBtnBack);
             this.loginbtn.MouseHover += new System.EventHandler(this.SwitchBtn);
             // 

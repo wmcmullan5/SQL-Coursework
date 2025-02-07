@@ -29,5 +29,14 @@ namespace SQL_Coursework
             registerbtn.Image = Properties.Resources.Heading;
         }
 
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
