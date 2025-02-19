@@ -16,5 +16,47 @@ namespace SQL_Coursework
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Reports next = new Reports();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddEntry next = new AddEntry();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DailySchedule next = new DailySchedule();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MOT next = new MOT();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TableViewer next = new TableViewer();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Vehicles next = new Vehicles();
+            next.Show();
+            this.Hide();
+        }
     }
 }

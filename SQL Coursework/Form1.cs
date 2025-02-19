@@ -25,7 +25,7 @@ namespace SQL_Coursework
                 //delays and then opens new form
                 Thread.Sleep(500);
                 this.Hide();
-                Login login = new Login();
+                Login1 login = new Login1();
                 login.Show();
             }
         }

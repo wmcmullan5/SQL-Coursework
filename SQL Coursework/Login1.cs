@@ -1,24 +1,32 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace SQL_Coursework
 {
-    public partial class Login : Form
+    public partial class Login1 : Form
     {
-        public Login()
+        // Colors from specifications
+        private readonly Color bgColor = ColorTranslator.FromHtml("#ecf1fe");
+        private readonly Color accent1 = ColorTranslator.FromHtml("#dcbf85");
+        private readonly Color accent2 = ColorTranslator.FromHtml("#93a29b");
+        private readonly Color darkText = ColorTranslator.FromHtml("#60594d");
+        private readonly Color darkest = ColorTranslator.FromHtml("#413620");
+
+        public Login1()
         {
             InitializeComponent();
         }
-       private void btnLogin_Click(object sender, EventArgs e)
+        private void Login1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtLoginUser.Text;
             string password = txtLoginPass.Text;
@@ -44,7 +52,7 @@ namespace SQL_Coursework
                 conn.Open();
                 string hashedPassword = HashPassword(password);
                 string query = "SELECT COUNT(*) FROM Users WHERE Username = @User AND Password = @Pass";
-                
+
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@User", username);
@@ -67,10 +75,11 @@ namespace SQL_Coursework
             }
         }
 
+
         private bool ValidateRegistration()
         {
             // Check all fields
-            if (string.IsNullOrWhiteSpace(txtRegUser.Text) || 
+            if (string.IsNullOrWhiteSpace(txtRegUser.Text) ||
                 string.IsNullOrWhiteSpace(txtRegPass.Text) ||
                 string.IsNullOrWhiteSpace(txtRegJob.Text))
             {
@@ -104,13 +113,13 @@ namespace SQL_Coursework
                     conn.Open();
                     string query = @"INSERT INTO Users (Username, Password, JobTitle, AdminID) 
                                    VALUES (@User, @Pass, @Job, @Admin)";
-                    
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@User", txtRegUser.Text);
                         cmd.Parameters.AddWithValue("@Pass", HashPassword(txtRegPass.Text));
                         cmd.Parameters.AddWithValue("@Job", txtRegJob.Text);
-                        cmd.Parameters.AddWithValue("@Admin", string.IsNullOrWhiteSpace(txtRegAdmin.Text) ? 
+                        cmd.Parameters.AddWithValue("@Admin", string.IsNullOrWhiteSpace(txtRegAdmin.Text) ?
                             (object)DBNull.Value : txtRegAdmin.Text);
 
                         int result = cmd.ExecuteNonQuery();
@@ -140,6 +149,11 @@ namespace SQL_Coursework
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
-    }
-}
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+}
