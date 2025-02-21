@@ -38,23 +38,9 @@ namespace SQL_Coursework
             this.Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            MOT next = new MOT();
-            next.Show();
-            this.Hide();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             TableViewer next = new TableViewer();
-            next.Show();
-            this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Vehicles next = new Vehicles();
             next.Show();
             this.Hide();
         }
