@@ -32,7 +32,7 @@ namespace SQL_Coursework
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     dataGridView.DataSource = dt;
-                    Title.Text = $"Loaded {dt.Rows.Count} rows";
+                    statusLabel.Text = $"Loaded {dt.Rows.Count} rows";
                 }
             }
             catch (SqlException ex)
@@ -45,7 +45,7 @@ namespace SQL_Coursework
         {
             if (string.IsNullOrWhiteSpace(txtQuery.Text))
             {
-                Title.Text = "Please enter a query";
+                statusLabel.Text = "Please enter a query";
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace SQL_Coursework
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
                         dataGridView.DataSource = dt;
-                        Title.Text = $"Loaded {dt.Rows.Count} rows";
+                        statusLabel.Text = $"Loaded {dt.Rows.Count} rows";
                         return;
                     }
                     catch (SqlException) { }
@@ -70,13 +70,13 @@ namespace SQL_Coursework
                     // If not SELECT, execute as non-query
                     conn.Open();
                     int affected = cmd.ExecuteNonQuery();
-                    Title.Text = $"Operation completed. Rows affected: {affected}";
+                    statusLabel.Text = $"Operation completed. Rows affected: {affected}";
                     LoadAllData(); // Refresh data
                 }
             }
             catch (SqlException ex)
             {
-                Title.Text = $"Error: {ex.Message}";
+                statusLabel.Text = $"Error: {ex.Message}";
             }
         }
 
