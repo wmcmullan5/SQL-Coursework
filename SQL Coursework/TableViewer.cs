@@ -162,7 +162,22 @@ namespace SQL_Coursework
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Stock";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView.DataSource = dt;
+                    Title.Text = $"Loaded {dt.Rows.Count} rows";
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}");
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
