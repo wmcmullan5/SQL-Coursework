@@ -113,5 +113,189 @@ namespace SQL_Coursework
         {
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            AddEntry next = new AddEntry();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQuery.Text))
+            {
+                Title.Text = "Please enter a query";
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(txtQuery.Text.Trim(), conn);
+
+                    // Try to execute as SELECT query
+                    try
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView.DataSource = dt;
+                        Title.Text = $"Loaded {dt.Rows.Count} rows";
+                        return;
+                    }
+                    catch (SqlException) { }
+
+                    // If not SELECT, execute as non-query
+                    conn.Open();
+                    int affected = cmd.ExecuteNonQuery();
+                    Title.Text = $"Operation completed. Rows affected: {affected}";
+                    LoadAllData(); // Refresh data
+                }
+            }
+            catch (SqlException ex)
+            {
+                Title.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQuery.Text))
+            {
+                Title.Text = "Please enter a query";
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(txtQuery.Text.Trim(), conn);
+
+                    // Try to execute as SELECT query
+                    try
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView.DataSource = dt;
+                        Title.Text = $"Loaded {dt.Rows.Count} rows";
+                        return;
+                    }
+                    catch (SqlException) { }
+
+                    // If not SELECT, execute as non-query
+                    conn.Open();
+                    int affected = cmd.ExecuteNonQuery();
+                    Title.Text = $"Operation completed. Rows affected: {affected}";
+                    LoadAllData(); // Refresh data
+                }
+            }
+            catch (SqlException ex)
+            {
+                Title.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtQuery.Text))
+            {
+                Title.Text = "Please enter a query";
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(txtQuery.Text.Trim(), conn);
+
+                    // Try to execute as SELECT query
+                    try
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dataGridView.DataSource = dt;
+                        Title.Text = $"Loaded {dt.Rows.Count} rows";
+                        return;
+                    }
+                    catch (SqlException) { }
+
+                    // If not SELECT, execute as non-query
+                    conn.Open();
+                    int affected = cmd.ExecuteNonQuery();
+                    Title.Text = $"Operation completed. Rows affected: {affected}";
+                    LoadAllData(); // Refresh data
+                }
+            }
+            catch (SqlException ex)
+            {
+                Title.Text = $"Error: {ex.Message}";
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu next = new Menu();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Menu next = new Menu();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Menu next = new Menu();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddEntry next = new AddEntry();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AddEntry next = new AddEntry();
+            next.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Staff";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView.DataSource = dt;
+                    Title.Text = $"Loaded {dt.Rows.Count} rows";
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}");
+            }
+        }
     }
 }
