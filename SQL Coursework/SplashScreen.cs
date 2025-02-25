@@ -1,8 +1,8 @@
 namespace SQL_Coursework
 {
-    public partial class Form1 : Form
+    public partial class SplashScreen : Form
     {
-        public Form1()
+        public SplashScreen()
         {
             InitializeComponent();
             EnterBtn1.Show();
