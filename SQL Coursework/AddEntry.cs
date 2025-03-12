@@ -73,9 +73,16 @@ namespace SQL_Coursework
         }
         private void Job()
         {
-
+            JobIdtxtbox.Show();
+            JobDescriptiontxtbox.Show();
+            JobDateBox.Show();
         }
         private void Stock()
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
