@@ -6,7 +6,7 @@ namespace SQL_Coursework
         {
             InitializeComponent();
             EnterBtn1.Show();
-            progressBar1.Maximum = 10000000;
+            progressBar1.Maximum = 100000;
         }
         //starts progress bar
         private void EnterBtn1_Click(object sender, EventArgs e)
@@ -16,11 +16,11 @@ namespace SQL_Coursework
             int i = rnd.Next(1, 3);
             progressBar1.Step = i;
             //increases progress bar, large number to make progress slower
-            while (progressBar1.Value != 10000000)
+            while (progressBar1.Value != 100000)
             {
                 progressBar1.PerformStep();
             }
-            if(progressBar1.Value == 10000000)
+            if(progressBar1.Value == 100000)
             {
                 //delays and then opens new form
                 Thread.Sleep(500);

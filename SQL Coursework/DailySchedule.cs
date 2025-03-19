@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,69 @@ namespace SQL_Coursework
         public DailySchedule()
         {
             InitializeComponent();
+            dateTimePicker1.Value = DateTime.Today;
+        }
+        string connectionString = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;";
+        private void LoadEvents()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT Id, EventTitle FROM Events WHERE EventDate = @date";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.Date);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+        }
+
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DeleteEventTxtBox.Text)) return;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "DELETE FROM Events WHERE EventDate = @date AND EventTitle = @title";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.Date);
+                    cmd.Parameters.AddWithValue("@title", DeleteEventTxtBox.Text);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            DeleteEventTxtBox.Clear();
+            LoadEvents();
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(AddEventTxtBox.Text)) return;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "INSERT INTO Events (EventDate, EventTitle) VALUES (@date, @title)";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.Date);
+                    cmd.Parameters.AddWithValue("@title", AddEventTxtBox.Text);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            AddEventTxtBox.Clear();
+            LoadEvents();
+        }
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            LoadEvents();
         }
     }
 }
