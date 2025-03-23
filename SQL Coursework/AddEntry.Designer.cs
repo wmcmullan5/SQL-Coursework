@@ -28,144 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.jobEntryBtn = new System.Windows.Forms.Button();
-            this.JobDateBox = new System.Windows.Forms.MonthCalendar();
-            this.JobIdtxtbox = new System.Windows.Forms.TextBox();
-            this.JobDescriptiontxtbox = new System.Windows.Forms.TextBox();
-            this.VehiclesBtn = new System.Windows.Forms.Button();
-            this.Maint_logBtn = new System.Windows.Forms.Button();
-            this.StaffBtn = new System.Windows.Forms.Button();
-            this.StockBtn = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            jobEntryBtn = new Button();
+            JobDateBox = new MonthCalendar();
+            JobIdtxtbox = new TextBox();
+            JobDescriptiontxtbox = new TextBox();
+            VehiclesBtn = new Button();
+            Maint_logBtn = new Button();
+            StaffBtn = new Button();
+            StockBtn = new Button();
+            button1 = new Button();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(168)))), ((int)(((byte)(124)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.ForeColor = Color.FromArgb(140, 168, 124);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(40, 37);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // jobEntryBtn
             // 
-            this.jobEntryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(191)))), ((int)(((byte)(133)))));
-            this.jobEntryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.jobEntryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.jobEntryBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.jobEntryBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.jobEntryBtn.Location = new System.Drawing.Point(312, 348);
-            this.jobEntryBtn.Name = "jobEntryBtn";
-            this.jobEntryBtn.Size = new System.Drawing.Size(176, 53);
-            this.jobEntryBtn.TabIndex = 11;
-            this.jobEntryBtn.Text = "Upload Entry";
-            this.jobEntryBtn.UseVisualStyleBackColor = false;
-            this.jobEntryBtn.Click += new System.EventHandler(this.UploadEntryBtn_Click);
+            jobEntryBtn.BackColor = Color.FromArgb(220, 191, 133);
+            jobEntryBtn.BackgroundImageLayout = ImageLayout.None;
+            jobEntryBtn.FlatStyle = FlatStyle.Flat;
+            jobEntryBtn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            jobEntryBtn.ForeColor = SystemColors.ButtonHighlight;
+            jobEntryBtn.Location = new Point(312, 348);
+            jobEntryBtn.Name = "jobEntryBtn";
+            jobEntryBtn.Size = new Size(176, 53);
+            jobEntryBtn.TabIndex = 11;
+            jobEntryBtn.Text = "Upload Entry";
+            jobEntryBtn.UseVisualStyleBackColor = false;
+            jobEntryBtn.Click += UploadEntryBtn_Click;
             // 
             // JobDateBox
             // 
-            this.JobDateBox.Location = new System.Drawing.Point(169, 155);
-            this.JobDateBox.Name = "JobDateBox";
-            this.JobDateBox.TabIndex = 18;
+            JobDateBox.Location = new Point(169, 155);
+            JobDateBox.Name = "JobDateBox";
+            JobDateBox.TabIndex = 18;
             // 
             // JobIdtxtbox
             // 
-            this.JobIdtxtbox.Location = new System.Drawing.Point(323, 110);
-            this.JobIdtxtbox.Name = "JobIdtxtbox";
-            this.JobIdtxtbox.Size = new System.Drawing.Size(154, 23);
-            this.JobIdtxtbox.TabIndex = 19;
+            JobIdtxtbox.Location = new Point(323, 110);
+            JobIdtxtbox.Name = "JobIdtxtbox";
+            JobIdtxtbox.Size = new Size(154, 23);
+            JobIdtxtbox.TabIndex = 19;
             // 
             // JobDescriptiontxtbox
             // 
-            this.JobDescriptiontxtbox.Location = new System.Drawing.Point(408, 155);
-            this.JobDescriptiontxtbox.Multiline = true;
-            this.JobDescriptiontxtbox.Name = "JobDescriptiontxtbox";
-            this.JobDescriptiontxtbox.Size = new System.Drawing.Size(252, 162);
-            this.JobDescriptiontxtbox.TabIndex = 20;
+            JobDescriptiontxtbox.Location = new Point(408, 155);
+            JobDescriptiontxtbox.Multiline = true;
+            JobDescriptiontxtbox.Name = "JobDescriptiontxtbox";
+            JobDescriptiontxtbox.Size = new Size(252, 162);
+            JobDescriptiontxtbox.TabIndex = 20;
             // 
             // VehiclesBtn
             // 
-            this.VehiclesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(191)))), ((int)(((byte)(133)))));
-            this.VehiclesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.VehiclesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VehiclesBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.VehiclesBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.VehiclesBtn.Location = new System.Drawing.Point(312, 348);
-            this.VehiclesBtn.Name = "VehiclesBtn";
-            this.VehiclesBtn.Size = new System.Drawing.Size(176, 53);
-            this.VehiclesBtn.TabIndex = 21;
-            this.VehiclesBtn.Text = "Upload Entry";
-            this.VehiclesBtn.UseVisualStyleBackColor = false;
-            this.VehiclesBtn.Click += new System.EventHandler(this.VehiclesBtn_Click);
+            VehiclesBtn.BackColor = Color.FromArgb(220, 191, 133);
+            VehiclesBtn.BackgroundImageLayout = ImageLayout.None;
+            VehiclesBtn.FlatStyle = FlatStyle.Flat;
+            VehiclesBtn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            VehiclesBtn.ForeColor = SystemColors.ButtonHighlight;
+            VehiclesBtn.Location = new Point(312, 348);
+            VehiclesBtn.Name = "VehiclesBtn";
+            VehiclesBtn.Size = new Size(176, 53);
+            VehiclesBtn.TabIndex = 21;
+            VehiclesBtn.Text = "Upload Entry";
+            VehiclesBtn.UseVisualStyleBackColor = false;
+            VehiclesBtn.Click += VehiclesBtn_Click;
             // 
             // Maint_logBtn
             // 
-            this.Maint_logBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(191)))), ((int)(((byte)(133)))));
-            this.Maint_logBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Maint_logBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Maint_logBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Maint_logBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Maint_logBtn.Location = new System.Drawing.Point(312, 348);
-            this.Maint_logBtn.Name = "Maint_logBtn";
-            this.Maint_logBtn.Size = new System.Drawing.Size(176, 53);
-            this.Maint_logBtn.TabIndex = 22;
-            this.Maint_logBtn.Text = "Upload Entry";
-            this.Maint_logBtn.UseVisualStyleBackColor = false;
-            this.Maint_logBtn.Click += new System.EventHandler(this.Maint_logBtn_Click);
+            Maint_logBtn.BackColor = Color.FromArgb(220, 191, 133);
+            Maint_logBtn.BackgroundImageLayout = ImageLayout.None;
+            Maint_logBtn.FlatStyle = FlatStyle.Flat;
+            Maint_logBtn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            Maint_logBtn.ForeColor = SystemColors.ButtonHighlight;
+            Maint_logBtn.Location = new Point(312, 348);
+            Maint_logBtn.Name = "Maint_logBtn";
+            Maint_logBtn.Size = new Size(176, 53);
+            Maint_logBtn.TabIndex = 22;
+            Maint_logBtn.Text = "Upload Entry";
+            Maint_logBtn.UseVisualStyleBackColor = false;
+            Maint_logBtn.Click += Maint_logBtn_Click;
             // 
             // StaffBtn
             // 
-            this.StaffBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(191)))), ((int)(((byte)(133)))));
-            this.StaffBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.StaffBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StaffBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StaffBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.StaffBtn.Location = new System.Drawing.Point(312, 348);
-            this.StaffBtn.Name = "StaffBtn";
-            this.StaffBtn.Size = new System.Drawing.Size(176, 53);
-            this.StaffBtn.TabIndex = 23;
-            this.StaffBtn.Text = "Upload Entry";
-            this.StaffBtn.UseVisualStyleBackColor = false;
-            this.StaffBtn.Click += new System.EventHandler(this.StaffBtn_Click);
+            StaffBtn.BackColor = Color.FromArgb(220, 191, 133);
+            StaffBtn.BackgroundImageLayout = ImageLayout.None;
+            StaffBtn.FlatStyle = FlatStyle.Flat;
+            StaffBtn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            StaffBtn.ForeColor = SystemColors.ButtonHighlight;
+            StaffBtn.Location = new Point(312, 348);
+            StaffBtn.Name = "StaffBtn";
+            StaffBtn.Size = new Size(176, 53);
+            StaffBtn.TabIndex = 23;
+            StaffBtn.Text = "Upload Entry";
+            StaffBtn.UseVisualStyleBackColor = false;
+            StaffBtn.Click += StaffBtn_Click;
             // 
             // StockBtn
             // 
-            this.StockBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(191)))), ((int)(((byte)(133)))));
-            this.StockBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.StockBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StockBtn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StockBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.StockBtn.Location = new System.Drawing.Point(312, 348);
-            this.StockBtn.Name = "StockBtn";
-            this.StockBtn.Size = new System.Drawing.Size(176, 53);
-            this.StockBtn.TabIndex = 24;
-            this.StockBtn.Text = "Upload Entry";
-            this.StockBtn.UseVisualStyleBackColor = false;
-            this.StockBtn.Click += new System.EventHandler(this.StockBtn_Click);
+            StockBtn.BackColor = Color.FromArgb(220, 191, 133);
+            StockBtn.BackgroundImageLayout = ImageLayout.None;
+            StockBtn.FlatStyle = FlatStyle.Flat;
+            StockBtn.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            StockBtn.ForeColor = SystemColors.ButtonHighlight;
+            StockBtn.Location = new Point(312, 348);
+            StockBtn.Name = "StockBtn";
+            StockBtn.Size = new Size(176, 53);
+            StockBtn.TabIndex = 24;
+            StockBtn.Text = "Upload Entry";
+            StockBtn.UseVisualStyleBackColor = false;
+            StockBtn.Click += StockBtn_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(141, 143, 132);
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(12, 356);
+            button1.Name = "button1";
+            button1.Size = new Size(198, 45);
+            button1.TabIndex = 25;
+            button1.Text = "Return To Menu";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // AddEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.StockBtn);
-            this.Controls.Add(this.StaffBtn);
-            this.Controls.Add(this.Maint_logBtn);
-            this.Controls.Add(this.VehiclesBtn);
-            this.Controls.Add(this.JobDescriptiontxtbox);
-            this.Controls.Add(this.JobIdtxtbox);
-            this.Controls.Add(this.jobEntryBtn);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.JobDateBox);
-            this.Name = "AddEntry";
-            this.Text = "AddEntry";
-            this.Load += new System.EventHandler(this.AddEntry_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 249, 243);
+            ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(StockBtn);
+            Controls.Add(StaffBtn);
+            Controls.Add(Maint_logBtn);
+            Controls.Add(VehiclesBtn);
+            Controls.Add(JobDescriptiontxtbox);
+            Controls.Add(JobIdtxtbox);
+            Controls.Add(jobEntryBtn);
+            Controls.Add(comboBox1);
+            Controls.Add(JobDateBox);
+            Name = "AddEntry";
+            Text = "AddEntry";
+            Load += AddEntry_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -179,5 +195,6 @@
         private Button Maint_logBtn;
         private Button StaffBtn;
         private Button StockBtn;
+        private Button button1;
     }
 }

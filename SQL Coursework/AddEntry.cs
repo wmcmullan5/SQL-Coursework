@@ -170,5 +170,12 @@ namespace SQL_Coursework
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu next = new Menu();
+            next.Show();
+            this.Hide();
+        }
     }
 }
