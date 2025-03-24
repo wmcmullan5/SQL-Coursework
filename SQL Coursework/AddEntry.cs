@@ -156,7 +156,7 @@ namespace SQL_Coursework
 
         private void UploadEntryBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -191,7 +191,7 @@ namespace SQL_Coursework
 
         private void StockBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -229,7 +229,7 @@ namespace SQL_Coursework
 
         private void VehiclesBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -267,7 +267,7 @@ namespace SQL_Coursework
 
         private void StaffBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

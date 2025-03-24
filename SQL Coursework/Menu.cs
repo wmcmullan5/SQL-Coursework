@@ -19,7 +19,7 @@ namespace SQL_Coursework
         {
             InitializeComponent();
         }
-        string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
         private void button2_Click(object sender, EventArgs e)
         {

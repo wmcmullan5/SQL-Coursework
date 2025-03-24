@@ -15,7 +15,7 @@ namespace SQL_Coursework
 {
     public partial class Reports : Form
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
         string query = "SELECT Email FROM Staff";
         public Reports()

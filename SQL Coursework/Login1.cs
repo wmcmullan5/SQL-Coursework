@@ -17,7 +17,7 @@ namespace SQL_Coursework
         private readonly Color accent2 = ColorTranslator.FromHtml("#93a29b");
         private readonly Color darkText = ColorTranslator.FromHtml("#60594d");
         private readonly Color darkest = ColorTranslator.FromHtml("#413620");
-        string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["MaintenanceConnectionString"].ConnectionString;
 
         public Login1()
         {
