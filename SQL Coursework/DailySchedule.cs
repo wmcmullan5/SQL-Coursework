@@ -19,7 +19,7 @@ namespace SQL_Coursework
             InitializeComponent();
             dateTimePicker1.Value = DateTime.Today;
         }
-        string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
+        string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
         private void LoadEvents()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))

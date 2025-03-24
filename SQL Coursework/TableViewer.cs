@@ -14,7 +14,8 @@ namespace SQL_Coursework
 {
     public partial class TableViewer : Form
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["SQL_Coursework.Properties.Settings.UserAuthConnectionString"].ConnectionString;
+
 
         public TableViewer()
         {
