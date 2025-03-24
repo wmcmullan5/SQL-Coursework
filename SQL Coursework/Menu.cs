@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace SQL_Coursework
         {
             InitializeComponent();
         }
+        string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -37,7 +39,7 @@ namespace SQL_Coursework
         }
         private string GetStoredUsername()
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.UserAuthConnectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT TOP 1 Username FROM Users ORDER BY Username"; // Modify query as needed
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -49,7 +51,7 @@ namespace SQL_Coursework
 
         private string GetStoredPassword(string username)
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.UserAuthConnectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT Password FROM Users WHERE Username=@username";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -61,7 +63,7 @@ namespace SQL_Coursework
         }
         private bool IsAdmin(string username, string password)
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.UserAuthConnectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT AdminID FROM Users WHERE Username=@username AND Password=@password";
                 SqlCommand cmd = new SqlCommand(query, conn);

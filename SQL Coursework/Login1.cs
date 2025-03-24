@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace SQL_Coursework
 {
@@ -16,7 +17,7 @@ namespace SQL_Coursework
         private readonly Color accent2 = ColorTranslator.FromHtml("#93a29b");
         private readonly Color darkText = ColorTranslator.FromHtml("#60594d");
         private readonly Color darkest = ColorTranslator.FromHtml("#413620");
-
+        string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
         public Login1()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace SQL_Coursework
 
         private bool ValidateLogin(string username, string password)
         {
-            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.UserAuthConnectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 string hashedPassword = HashPassword(password);
@@ -108,7 +109,7 @@ namespace SQL_Coursework
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.UserAuthConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"INSERT INTO Users (Username, Password, JobTitle, AdminID) 

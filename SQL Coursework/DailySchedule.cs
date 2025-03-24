@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -18,7 +19,7 @@ namespace SQL_Coursework
             InitializeComponent();
             dateTimePicker1.Value = DateTime.Today;
         }
-        string connectionString = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;";
+        string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
         private void LoadEvents()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -86,6 +87,11 @@ namespace SQL_Coursework
             Menu next = new Menu();
             next.Show();
             this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

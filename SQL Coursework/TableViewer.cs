@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,7 +14,7 @@ namespace SQL_Coursework
 {
     public partial class TableViewer : Form
     {
-        private string connectionString = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;";
+        private string connectionString = ConfigurationManager.ConnectionStrings["App.config"].ConnectionString;
 
         public TableViewer()
         {
